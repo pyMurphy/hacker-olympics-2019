@@ -1,0 +1,35 @@
+one = ord("a")//ord("a")
+negative_one = -one
+two = one + one
+
+def triangle_numbers(n):
+    i = two
+    triangular = [one]
+    while (triangular[negative_one] < n):  
+        triangular.append((i ** two + i)//two)
+        i += one;
+    if (n not in triangular):
+        triangular = triangular[:negative_one]
+        
+    for i in range(len(triangular)): 
+        print (triangular[i] )
+
+def quadratic_numbers(n):
+    i = two
+    quadratic = [one]
+    while (quadratic[negative_one] < n):  
+        quadratic.append(i**two)
+        i += one;
+    
+    if (n not in quadratic):    
+        quadratic = quadratic[:negative_one]
+        
+    for i in range(len(quadratic)): 
+        print (quadratic[i] )
+
+n = int(input())
+if (n == one):
+    print("{}\n{}".format(one,one))
+else:
+    triangle_numbers(n)
+    quadratic_numbers(n)        
