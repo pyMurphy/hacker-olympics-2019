@@ -1,0 +1,14 @@
+(lecture_len, naps) = list(map(int, input().split(" ")))
+minutesSleptList = list()
+
+for i in range(naps):
+    (start, end) = list(map(int, input().split(" ")))
+    for i in range (start, end):
+        minutesSleptList.append(i)
+
+minutesSleptSet = set(minutesSleptList)
+
+if (len(minutesSleptList) == len(minutesSleptSet)):
+    print("NO")
+else:
+    print("YES")
