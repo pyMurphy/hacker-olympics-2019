@@ -1,0 +1,14 @@
+numbersString = input()
+    
+numbers = list(map(int, numbersString.split(" ")))
+numbers.sort()
+median = 0;
+
+if (len(numbers)%2 == 1):
+    median = numbers[len(numbers)//2]
+else:
+    median = (numbers[len(numbers)//2-1] + numbers[len(numbers)//2]) / 2
+
+sum = numbers[len(numbers)-2] + numbers[2] + median
+
+print ("%.1f" % sum) 
