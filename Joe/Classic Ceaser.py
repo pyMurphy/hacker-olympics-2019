@@ -19,24 +19,7 @@ def encrypt(string, k):
         
     return ''.join(newString)
 
-### DECRYPT ###
-def decrypt(encrypted, k):
-    decrypted = []
-
-    #index caps
-    caps = [encrypted.index(i) for i in encrypted if ord(i)>65 and ord(i)<90]
-
-    encrypted = encrypted.lower()
-    for i in range(len(encrypted)):
-        letter = alphabet.index(encrypted[i])
-        decrypted.append( alphabet[(letter+k)%26] )
-
-    for i in caps:
-        decrypted[i] = decrypted[i].upper()
-    return ''.join(decrypted)
-
-
 ### ENCRYPTER & DECRYPTER ###   
-k = randint(0,25)
-print(encrypt('HackerOlympics',7))
-print(decrypt('OhjrlyVsftwpjz',19))
+string = str(input())
+k = int(input())
+print(encrypt(string,k))
