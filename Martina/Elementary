@@ -1,0 +1,31 @@
+chem_elements = ["Ac","Ag","Al","Am","Ar","As","At","Au","B","Ba","Be","Bh","Bi","Bk","Br","C","Ca","Cd","Ce","Cf","Cl","Cm","Cn","Co","Cr","Cs","Cu","Db",
+                 "Ds","Dy","Er","Es","Eu","F","Fe","Fl","Fm","Fr","Ga","Gd","Ge","H","He","Hf","Hg","Ho","Hs","I","In","Ir","K","Kr","La","Li","Lr","Lu",
+                 "Lv","Md","Mg","Mn","Mo","Mt","N","Na","Nb","Nd","Ne","Ni","No","Np","O","Os","P","Pa","Pb","Pd","Pm","Po","Pr","Pt","Pu","Ra","Rb","Re",
+                 "Rf","Rg","Rh","Rn","Ru","S","Sb","Sc","Se","Sg","Si","Sm","Sn","Sr","Ta","Tb","Tc","Te","Th","Ti","Tl","Tm","U","Uuo","Uup","Uus","Uut",
+                 "V","W","Xe","Y","Yb","Zn","Zr"]
+
+chem_el_caps = list()
+for i in range (len(chem_elements)):
+    chem_el_caps.append(chem_elements[i].upper())
+
+transformedMessage = ""
+lettersDetected = list()
+ 
+message = input()
+messageCopy = message
+for i in range(len(chem_el_caps)):
+    if (chem_el_caps[i] in message):
+        for occur in range(message.count(chem_el_caps[i])):
+            for el_len in range (0,len(chem_el_caps[i])):
+                lettersDetected.append(message.index(chem_el_caps[i]) + i)
+            
+        messageCopy = messageCopy.replace(chem_el_caps[i],chem_elements[i])
+        transformedMessage = messageCopy.replace(chem_el_caps[i],chem_elements[i])
+        message = message.replace(chem_el_caps[i],"")
+    
+        
+if (len(transformedMessage) < len(messageCopy) or (len(lettersDetected) < len(messageCopy))):
+    print("impossible")
+
+else:
+    print(transformedMessage)
