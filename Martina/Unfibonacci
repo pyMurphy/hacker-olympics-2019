@@ -1,0 +1,14 @@
+fibonacci_numbers = [0, 1]
+originalNum = int(input())
+i = 2
+while (fibonacci_numbers[len(fibonacci_numbers)-1] < originalNum):
+    fibonacci_numbers.append(fibonacci_numbers[i-1]+fibonacci_numbers[i-2])
+    i += 1
+if (originalNum == 0):
+    print ("0 0 0")
+elif (originalNum == 1):
+    print ("1 0 0")
+elif (originalNum == 2):
+    print ("1 1 0")    
+else:
+    print("{} {} {}".format(fibonacci_numbers[-2], fibonacci_numbers[-4], fibonacci_numbers[-5]))
